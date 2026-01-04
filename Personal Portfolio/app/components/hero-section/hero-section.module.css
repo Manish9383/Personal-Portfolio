@@ -1,0 +1,428 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 1.5rem 3rem;
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: slideInLeft 1s ease-out;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-accent-3);
+  border: 1px solid var(--color-accent-6);
+  border-radius: var(--radius-round);
+  color: var(--color-accent-11);
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: fit-content;
+  animation: fadeIn 1s ease-out 0.2s both;
+}
+
+.badgeIcon {
+  width: 1rem;
+  height: 1rem;
+  animation: rotate 3s linear infinite;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.02em;
+  animation: fadeIn 1s ease-out 0.4s both;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--color-accent-9) 0%, var(--color-accent-11) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 600;
+  color: var(--color-neutral-11);
+  animation: fadeIn 1s ease-out 0.6s both;
+}
+
+.role {
+  color: var(--color-accent-10);
+}
+
+.separator {
+  color: var(--color-neutral-7);
+}
+
+.typing {
+  font-family: var(--font-code);
+  color: var(--color-neutral-10);
+  position: relative;
+}
+
+.cursor {
+  color: var(--color-accent-9);
+  animation: blink 1s step-end infinite;
+}
+
+.description {
+  font-size: 1.125rem;
+  color: var(--color-neutral-11);
+  max-width: 600px;
+  line-height: 1.7;
+  margin: 0;
+  animation: fadeIn 1s ease-out 0.8s both;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  animation: fadeIn 1s ease-out 1s both;
+}
+
+.primaryBtn {
+  background: linear-gradient(135deg, var(--color-accent-9) 0%, var(--color-accent-10) 100%);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.secondaryBtn {
+  transition: all 0.3s ease;
+}
+
+.secondaryBtn:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent-9);
+  color: var(--color-accent-9);
+}
+
+.btnIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.social {
+  display: flex;
+  gap: 1rem;
+  animation: fadeIn 1s ease-out 1.2s both;
+}
+
+.socialLink {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-neutral-3);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-3);
+  color: var(--color-neutral-11);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.socialLink:hover {
+  background: var(--color-accent-9);
+  border-color: var(--color-accent-9);
+  color: white;
+  transform: translateY(-4px);
+}
+
+.visual {
+  position: relative;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.codeVisual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floatingCode {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-neutral-2) 0%, var(--color-neutral-3) 100%);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-4);
+  padding: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  animation: float 6s ease-in-out infinite;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.floatingCode::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-accent-9), var(--color-success-9), var(--color-accent-9));
+  background-size: 200% 100%;
+  animation: gradientMove 3s linear infinite;
+}
+
+.code {
+  margin: 0;
+  font-family: var(--font-code);
+  font-size: 1rem;
+  color: var(--color-neutral-11);
+  line-height: 1.8;
+}
+
+.techIcons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.techIcon {
+  position: absolute;
+  font-size: 3rem;
+  filter: grayscale(0.3) opacity(0.3);
+  animation: floatIcon 8s ease-in-out infinite;
+}
+
+.techIcon:nth-child(1) {
+  top: 10%;
+  left: 5%;
+}
+
+.techIcon:nth-child(2) {
+  top: 20%;
+  right: 10%;
+  animation-duration: 10s;
+}
+
+.techIcon:nth-child(3) {
+  bottom: 30%;
+  left: 8%;
+  animation-duration: 12s;
+}
+
+.techIcon:nth-child(4) {
+  bottom: 15%;
+  right: 5%;
+  animation-duration: 9s;
+}
+
+.techIcon:nth-child(5) {
+  top: 50%;
+  left: 15%;
+  animation-duration: 11s;
+}
+
+.techIcon:nth-child(6) {
+  top: 60%;
+  right: 20%;
+  animation-duration: 13s;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fadeIn 1s ease-out 1.5s both;
+}
+
+.scrollIndicator {
+  width: 2px;
+  height: 3rem;
+  background: linear-gradient(to bottom, var(--color-accent-9), transparent);
+  animation: scrollDown 2s ease-in-out infinite;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(20px, -20px) scale(1.1);
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+@keyframes floatIcon {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(10px, -10px) rotate(5deg);
+  }
+  50% {
+    transform: translate(-5px, 10px) rotate(-5deg);
+  }
+  75% {
+    transform: translate(15px, 5px) rotate(3deg);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .visual {
+    height: 400px;
+  }
+
+  .floatingCode {
+    padding: 1.5rem;
+  }
+
+  .code {
+    font-size: 0.875rem;
+  }
+
+  .techIcon {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 5rem 1rem 2rem;
+  }
+
+  .visual {
+    height: 300px;
+  }
+
+  .floatingCode {
+    padding: 1rem;
+  }
+
+  .code {
+    font-size: 0.75rem;
+  }
+
+  .techIcon {
+    font-size: 2rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+  }
+}

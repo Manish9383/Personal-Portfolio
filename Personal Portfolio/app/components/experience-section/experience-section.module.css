@@ -1,0 +1,250 @@
+.section {
+  padding: 8rem 1.5rem;
+  background: linear-gradient(180deg, transparent 0%, var(--color-neutral-2) 50%, transparent 100%);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: var(--color-accent-3);
+  border: 1px solid var(--color-accent-6);
+  border-radius: var(--radius-round);
+  color: var(--color-accent-11);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--color-neutral-11);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--color-accent-9), var(--color-accent-5));
+}
+
+.timelineItem {
+  position: relative;
+  padding-bottom: 3rem;
+  animation: slideInRight 0.6s ease-out both;
+}
+
+.timelineItem:last-child {
+  padding-bottom: 0;
+}
+
+.timelineDot {
+  position: absolute;
+  left: -1.5rem;
+  top: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  background: var(--color-neutral-1);
+  border: 3px solid var(--color-accent-9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.timelineItem:hover .timelineDot {
+  transform: scale(1.2);
+  border-color: var(--color-accent-10);
+  box-shadow: 0 0 20px var(--color-accent-9);
+}
+
+.dotInner {
+  width: 0.75rem;
+  height: 0.75rem;
+  background: var(--color-accent-9);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.timelineContent {
+  margin-left: 1rem;
+}
+
+.card {
+  background: var(--color-neutral-2);
+  border: 1px solid var(--color-neutral-6);
+  border-radius: var(--radius-4);
+  padding: 2rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-accent-9), var(--color-accent-10));
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s ease;
+}
+
+.card:hover::before {
+  transform: scaleY(1);
+}
+
+.card:hover {
+  transform: translateX(8px);
+  border-color: var(--color-accent-7);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.iconWrapper {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-accent-9), var(--color-accent-10));
+  border-radius: var(--radius-2);
+  color: white;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.card:hover .iconWrapper {
+  transform: rotate(5deg) scale(1.05);
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.headerContent {
+  flex: 1;
+}
+
+.role {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+  color: var(--color-neutral-12);
+}
+
+.company {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-accent-10);
+  margin: 0;
+}
+
+.period {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-neutral-10);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.calendarIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.description {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--color-neutral-11);
+  margin: 0;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 5rem 1rem;
+  }
+
+  .timeline {
+    padding-left: 1.5rem;
+  }
+
+  .timeline::before {
+    left: 0.75rem;
+  }
+
+  .timelineDot {
+    left: -1.125rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+}

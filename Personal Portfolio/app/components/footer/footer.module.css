@@ -1,0 +1,44 @@
+.footer {
+  padding: 3rem 1.5rem;
+  background: var(--color-neutral-2);
+  border-top: 1px solid var(--color-neutral-6);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  color: var(--color-neutral-11);
+  margin: 0 0 0.5rem;
+}
+
+.heart {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--color-error-9);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.copyright {
+  font-size: 0.9375rem;
+  color: var(--color-neutral-10);
+  margin: 0;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
