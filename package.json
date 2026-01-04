@@ -2,7 +2,7 @@
   "name": "personal-portfolio-root",
   "private": true,
   "scripts": {
-    "build": "npm --prefix \"Personal Portfolio\" run build",
+    "build": "npm --prefix \"Personal Portfolio\" run build:router",
     "dev": "npm --prefix \"Personal Portfolio\" run dev",
     "start": "npm --prefix \"Personal Portfolio\" run start"
   }
